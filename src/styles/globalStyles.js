@@ -14,6 +14,7 @@ background: ${({ theme }) => theme.bg2};
 color: ${({ theme }) => theme.text};
 font-family: 'Roboto', sans-serif;
 letter-spacing: .6px; 
+
 }
 /*LOGIN */
 .gridLogin {
@@ -26,11 +27,11 @@ background: rgba(255,140,0);
 transition: all 250ms linear 0s;
 }
 }
-a {
+/* a {
 color: ${({ theme }) => theme.text};
 text-decoration: none;
 }
-
+*/
 /* CSS CARD */
 .desc {
 color: ${({ theme }) => theme.text}; 

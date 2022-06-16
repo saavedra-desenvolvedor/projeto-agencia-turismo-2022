@@ -11,11 +11,12 @@ import ContactPage from "../../pages/Contact/ContactPage";
 import DestinationsPage from "../../pages/Destinations/DestinationsPage";
 import Post from "../../pages/Post/Post";
 import ServicesPage from "../../pages/Services/ServicesPage";
-import LoginPage from "../../views/Login/LoginPage";
+//import LoginPage from "../../views/Login/LoginPage";
 import NovaConta from "../../views/novaConta/NovaConta";
 import ProtectedRoute from "../ProtectedRoute";
 import RecuperaSenha from "../../views/recuperarSenha/RecuperaSenha";
 import { UserAuthContextProvider } from "../../context/UserAuthContext";
+//import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Layout = ({ children }) => {
   //const [user, setUser] = useState();
@@ -38,7 +39,15 @@ const Layout = ({ children }) => {
             }
           />
 
-          <Route path="/about" element={<AboutPage />} />
+          <Route
+            path="/about"
+            element={
+              <ProtectedRoute>
+                <AboutPage />
+              </ProtectedRoute>
+            }
+          />
+
           <Route
             path="/destinations"
             element={
@@ -79,7 +88,7 @@ const Layout = ({ children }) => {
               </ProtectedRoute>
             }
           />
-          <Route path="/" element={<LoginPage />} />
+          {/*  <Route path="/" element={<LoginPage />} /> */}
           <Route exact path="/novaconta" element={<NovaConta />} />
           <Route exact path="/recuperasenha" element={<RecuperaSenha />} />
 

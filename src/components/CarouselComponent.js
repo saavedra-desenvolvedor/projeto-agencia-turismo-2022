@@ -54,7 +54,7 @@ export default function CarouselComponent() {
           data={data}
           time={1000}
           width="100%"
-          height="360px"
+          height="400px"
           captionStyle={captionStyle}
           radius="10px"
           slideNumber={true} //numeração slides

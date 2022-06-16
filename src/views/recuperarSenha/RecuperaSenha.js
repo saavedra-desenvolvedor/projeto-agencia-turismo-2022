@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../context/UserAuthContext";
 
 import logoB from "../../assets/logoB.png";
+import franca from "../../assets/franca.png";
 
 import * as s from "./RecuperaSenhaStyles";
 
@@ -38,28 +39,36 @@ const RecuperaSenha = () => {
 
   return (
     <s.SenhaContainer>
-      <h1>Recupera Senha - Agência de Viagens</h1>
-      <div className="grid">
-        <div className="gridLogin">
-          <span className="login-form-title"> Recuperar Senha </span>
-          <img src={logoB} className="logo" alt="logo" />
-          <form className="form" onSubmit={handleResetPassword}>
-            <div className="inputEmail">
-              <input
-                type="email"
-                name="email"
-                placeholder="  digite um email cadastrado"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
+      <section>
+        <div className="imgBx">
+          <img src={franca} alt="frança" />
+          {/* <img src={argentina} alt="argentina" /> */}
+        </div>
+        <div className="contetBx">
+          <div className="formBx">
+            <img src={logoB} className="logo" alt="logo" />
+            
+            <h2> Recuperar Senha </h2>
+            <p></p>              
+            <form className="form" onSubmit={handleResetPassword}>
+              <div className="inputBx">
+                <span>Nome</span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="  digite um email cadastrado"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="inputBx">
+                <input type="submit" value="Enviar" name="" />
+                {/* <button className="btnLogin">ENVIAR</button> */}
+                {error && <Alert variant="danger">{error}</Alert>}
+              </div>
+            </form>
 
-            <button className="btnLogin">ENVIAR</button>
-            {error && <Alert variant="danger">{error}</Alert>}
-          </form>
-
-          <div>
             <Link to="/novaconta" className="btnNovaConta">
-              Criar uma conta
+            Criar conta
             </Link>
 
             <Link to="/" className="btnVoltar">
@@ -67,7 +76,7 @@ const RecuperaSenha = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </section>
     </s.SenhaContainer>
   );
 };

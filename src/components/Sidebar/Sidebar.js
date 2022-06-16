@@ -29,11 +29,11 @@ import {
 } from "react-icons/fa";
 
 import { MdContactMail, MdMiscellaneousServices } from "react-icons/md";
-//import { BiLogOut, BiLogIn } from "react-icons/bi";
 
 import { ThemeContext } from "./../../App";
 import { useLocation } from "react-router-dom";
 
+//import { BiLogOut } from "react-icons/bi";
 //import { useNavigate } from "react-router";
 //import { useUserAuth } from "../../context/UserAuthContext";
 

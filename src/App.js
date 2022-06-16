@@ -3,12 +3,15 @@ import { Helmet } from "react-helmet";
 import { ThemeProvider } from "styled-components";
 import Layout from "./components/Layout/Layout";
 
-//import Rotas from "./Rotas";
-//import Post from "./pages/Post/Post";
+//import Teste from "./pages/Teste/Teste";
 
 import { GlobalStyle } from "./styles/globalStyles";
 import { darkTheme, lightTheme } from "./styles/theme";
-//import LoginPage from "./views/Login/LoginPage";
+
+import LoginPage from "./views/Login/LoginPage";
+//import { useUserAuth } from "./context/UserAuthContext";
+import { UserAuthContextProvider } from "./context/UserAuthContext";
+import { Routes, Route } from "react-router-dom";
 
 export const ThemeContext = React.createContext(null);
 
@@ -30,30 +33,41 @@ const App = () => {
   const locale = "pt-br";
   //new Date().toLocaleDateString(locale, option); */
   return (
-    <ThemeContext.Provider value={{ setTheme, theme }}>
-      <ThemeProvider theme={themeStyle}>
-        <GlobalStyle />
-        <Helmet>
-          <title>Agência Viagens</title>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-            rel="stylesheet"
-          />
-        </Helmet>
-        <>
-          <Layout>
-            {/* <Rotas /> */}
+    <UserAuthContextProvider>
+      <ThemeContext.Provider value={{ setTheme, theme }}>
+        <ThemeProvider theme={themeStyle}>
+          <GlobalStyle />
 
-            <div className="data-hora">
-              {/* {new Date().toLocaleDateString(locale, option)} */}
-              {/*{new Date().toLocaleTimeString()} */}
-            </div>
-          </Layout>
-        </>
-      </ThemeProvider>
-    </ThemeContext.Provider>
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+          </Routes>
+
+          <Helmet>
+            <title>Agência Viagens</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link
+              rel="preconnect"
+              href="https://fonts.gstatic.com"
+              crossorigin
+            />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+              rel="stylesheet"
+            />
+          </Helmet>
+          <>
+            <Layout>
+              {/* <Rotas /> */}
+
+              <div className="data-hora">
+                {/* {new Date().toLocaleDateString(locale, option)} */}
+                {/*{new Date().toLocaleTimeString()} */}
+              </div>
+            </Layout>
+          </>
+        </ThemeProvider>
+      </ThemeContext.Provider>
+    </UserAuthContextProvider>
   );
 };
 

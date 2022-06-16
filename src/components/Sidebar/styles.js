@@ -9,7 +9,7 @@ export const SSidebar = styled.div`
   height: 100vh;
   padding: ${v.lgSpacing};
 
-  position: relative;
+  position: relative; /* Relative mudado para Absolute  */
 
   .menu-bar {
     height: calc(100% - 120px);
@@ -75,6 +75,26 @@ export const SSidebar = styled.div`
       display: inline-block;
       cursor: pointer;
     }
+  }
+  .btnLogout {
+    display: inline;
+    text-decoration: none;
+    list-style-type: none;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .btnText {
+    display: inline;
+    text-decoration: none;
+    list-style-type: none;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .textUser {
+    margin: 5px;
+    text-align: end;
   }
 `;
 

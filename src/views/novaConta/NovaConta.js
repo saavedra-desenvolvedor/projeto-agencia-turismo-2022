@@ -7,6 +7,8 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 import logoB from "../../assets/logoB.png";
+
+import argentina from "../../assets/argentina.png";
 import * as s from "./NovaContaStyles";
 
 const NovaConta = () => {
@@ -51,48 +53,58 @@ const NovaConta = () => {
 
   return (
     <s.NovaContainer>
-      <div className="grid">
-        <div className="gridLogin">
-          <span className="login-form-title"> Cadastro </span>
-          <p>Crie sua conta, é grátis!</p>
-          <img src={logoB} className="logo" alt="logo" />
+      <section>
+        <div className="imgBx">
+          <img src={argentina} alt="argentina" />
+        </div>
+        <div className="contetBx">
+          <div className="formBx">
+          <img src={logoB} className="logo" alt="logo" /> 
+          <br/>
+            <h2> Cadastro </h2>
+            <p></p>    
 
-          <form className="form" onSubmit={handleSubmit}>
-            <div className="inputEmail">
-              <input
-                type="email"
-                name="email"
-                placeholder=" digite um email valido"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="inputPassword">
-              <input
-                className="inputSenha"
-                placeholder=" digite uma senha"
-                onChange={(e) => setPassword(e.target.value)}
-                type={show ? "text" : "password"}
-                value={password}
-              />
-
-              <div className="loginEye">
-                {show ? (
-                  <VisibilityIcon onClick={handleClick} />
-                ) : (
-                  <VisibilityOffIcon VisibilityIcon onClick={handleClick} />
-                )}
+            <form onSubmit={handleSubmit}>
+              <div className="inputBx">
+                <span>Nome</span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder=" digite um email valido"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
-            </div>
+              <div className="inputBx">
+                <span>Senha</span>
+                <input
+                  className="inputSenha"
+                  placeholder=" digite uma senha"
+                  onChange={(e) => setPassword(e.target.value)}
+                  type={show ? "text" : "password"}
+                  value={password}
+                />
 
-            <button className="btnLogin">CADASTRAR</button>
-            {error && <Alert variant="danger">{error}</Alert>}
-          </form>
-          <div className="btnCadastrar">
-            Já tenho uma conta?
-            <Link to="/">Faça login</Link>
+                <div className="loginEye">
+                  {show ? (
+                    <VisibilityIcon onClick={handleClick} />
+                  ) : (
+                    <VisibilityOffIcon VisibilityIcon onClick={handleClick} />
+                  )}
+                </div>
+              </div>
+              <div className="inputBx">
+                <input type="submit" value="Cadastrar" name="" />
+                {/* <button className="btnLogin">CADASTRAR</button> */}
+                {error && <Alert variant="danger">{error}</Alert>}
+              </div>
+            </form>
+            <div>
+              Já tenho uma conta?
+              <Link to="/"> Faça login</Link>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </s.NovaContainer>
   );
 };

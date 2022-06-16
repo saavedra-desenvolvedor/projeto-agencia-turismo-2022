@@ -34,7 +34,7 @@ export const HomeContainer = styled.div`
   }
   .textUser {
     margin: 5px;
-    text-align: inline;
+    text-align: end;
     @media screen and (min-width: 300px) and (max-width: 480px) {
       width: 30%;
       text-align: center;
@@ -43,7 +43,7 @@ export const HomeContainer = styled.div`
   }
 
   .carousel {
-    width: 90%;
+    width: 95%;
 
     cursor: pointer;
     @media screen and (min-width: 300px) and (max-width: 480px) {

@@ -7,8 +7,10 @@ import { Alert } from "react-bootstrap";
 import { FaGithub, FaGoogle, FaFacebook } from "react-icons/fa";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-
+//import Marquee from "react-fast-marquee";
 import logoB from "../../assets/logoB.png";
+import brasil from "../../assets/brasil.png";
+
 import * as s from "./LoginStyles";
 
 const LoginPage = () => {
@@ -25,7 +27,7 @@ const LoginPage = () => {
     setError("");
     try {
       await logIn(email, password);
-      navigate("/home");
+      navigate("/about");
     } catch (error) {
       //setError(err.message);
       if (error.code === "auth/user-not-found") {
@@ -82,70 +84,84 @@ const LoginPage = () => {
 
   return (
     <s.LoginContainer>
-      <div className="grid">
-        <div className="gridLogin">
-          <span className="login-form-title"> Login </span>
-
-          <img src={logoB} className="logo" alt="logo" />
-          <p>
-            Efetue seu Login ou Cadastre-se para acessar os demais serviços.
-          </p>
-
-          <form className="form" onSubmit={handleSubmit}>
-            <div className="inputEmail">
-              <input
-                type="email"
-                name="email"
-                placeholder="  email cadastrado"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="inputPassword">
-              <input
-                className="inputSenha"
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="  senha cadastrada"
-                type={show ? "text" : "password"}
-                value={password}
-              />
-
-              <div className="loginEye">
-                {show ? (
-                  <VisibilityIcon onClick={handleClick} />
-                ) : (
-                  <VisibilityOffIcon VisibilityIcon onClick={handleClick} />
-                )}
-              </div>
-            </div>
-
-            <button className="btnLogin">ENTRAR</button>
-            {error && <Alert variant="danger">{error}</Alert>}
-          </form>
-          <div>
-            <Link to="/recuperasenha" className="btnSingin">
-              Nova Senha
-            </Link>
-
-            <Link to="/novaconta" className="btnPassword">
-              Cadastre-se
-            </Link>
-          </div>
-
-          <h3>ou</h3>
-          <h4>Login com Suas Redes Sociais</h4>
-          <li>
-            <FaFacebook onClick={handleFacebookSignIn} />
-          </li>
-          <li>
-            <div>
-              <FaGoogle onClick={handleGoogleSignIn} />
-            </div>
-          </li>
-          <li>
-            <FaGithub onClick={handleGithubSignIn} />
-          </li>
+      <section>
+        <div className="imgBx">
+          <img src={brasil} alt="brasil" />
         </div>
-      </div>
+        <div className="contetBx">
+          <div className="formBx">
+            <img src={logoB} className="logo" alt="logo" /> 
+            <br/>
+            <h2> Bem-Vindo! </h2>
+            <p>
+            Cadastre-se ou faça login para acessar a home page.
+            </p>
+            <form onSubmit={handleSubmit}>
+              <div className="inputBx">
+                <span>Nome</span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="email cadastrado"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="inputBx">
+                <span>Senha</span>
+                <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="senha cadastrada"
+                  type={show ? "text" : "password"}
+                  value={password}
+                />
+                <div className="loginEye">
+                  {show ? (
+                    <VisibilityIcon onClick={handleClick} />
+                  ) : (
+                    <VisibilityOffIcon VisibilityIcon onClick={handleClick} />
+                  )}
+                </div>
+              </div>
+
+             {/* 
+             <div className="remember">
+                <label>
+                  <input type="checkbox" name="" /> lembrar-me
+                </label>
+                  </div>
+                  */}
+              <div className="inputBx">
+                <input type="submit" value="Entrar" name="" />
+                {/* <button className="btnLogin">ENTRAR</button> */}
+                {error && <Alert variant="danger">{error}</Alert>}
+              </div>
+            </form>
+            <div className="inputBx">
+              <Link to="/recuperasenha" className="btnSingin">
+              Esqueci minha senha
+              </Link>
+
+              <Link to="/novaconta" className="btnPassword">
+                Cadastre-se
+              </Link>
+            </div>
+            <h3>Logar com Rede Social</h3>
+            <ul className="sci">
+              <li>
+                <FaFacebook onClick={handleFacebookSignIn} />
+              </li>
+              <li>
+                <div className="sciG">
+                  <FaGoogle onClick={handleGoogleSignIn} />
+                </div>
+              </li>
+              <li>
+                <FaGithub onClick={handleGithubSignIn} />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </s.LoginContainer>
   );
 };

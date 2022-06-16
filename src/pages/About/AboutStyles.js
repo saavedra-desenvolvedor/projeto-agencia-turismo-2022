@@ -20,10 +20,6 @@ export const AboutContainer = styled.div`
     width: 95%;
   }
 
-  //background-image: url("/countries/australia.png");
-
-  //opacity: 0.6;
-
   /*
    button {
     width: 69%;
@@ -40,6 +36,10 @@ export const AboutContainer = styled.div`
     color: red;
     font-weight: bold;
     font-size: 20px;
+    position: fixed;
+
+    left: 0pt;
+    position: absolute;
   }
   .btnText {
     display: inline;
@@ -50,6 +50,5 @@ export const AboutContainer = styled.div`
   }
   .textUser {
     margin: 5px;
-    text-align: end;
   }
 `;

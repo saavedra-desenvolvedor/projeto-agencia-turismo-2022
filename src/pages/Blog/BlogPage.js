@@ -2,7 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { useUserAuth } from "../../context/UserAuthContext";
 
-import logoB from "../../assets/logoB.png";
+import brasil from "../../assets/brasil.png";
+import argentina from "../../assets/argentina.png";
+
 import { BiLogOut } from "react-icons/bi";
 
 import * as s from "./BlogStyles";
@@ -31,7 +33,7 @@ const BlogPage = () => {
       </div>
 
       <h1>Blog Page - Agência de Viagens</h1>
-      <img src={logoB} alt="imagem Blog" className="logoBlog" />
+      {/*<img src={logoB} alt="imagem Blog" className="logoBlog" />*/}
     </s.BlogContainer>
   );
 };
