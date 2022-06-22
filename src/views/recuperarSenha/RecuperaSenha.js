@@ -33,7 +33,7 @@ const RecuperaSenha = () => {
         setError("Usuário não encontrado.");
       } else if (error.code === "auth/missing-email") {
         setError("E-mail ausente / Digite um e-mail.");
-      } else setError("Erro ao enviar email: " + error.code);
+      } else setError("Erro ao enviar email!");
     }
   };
 
@@ -47,9 +47,9 @@ const RecuperaSenha = () => {
         <div className="contetBx">
           <div className="formBx">
             <img src={logoB} className="logo" alt="logo" />
-            
+
             <h2> Recuperar Senha </h2>
-            <p></p>              
+            <p></p>
             <form className="form" onSubmit={handleResetPassword}>
               <div className="inputBx">
                 <span>Nome</span>
@@ -68,7 +68,7 @@ const RecuperaSenha = () => {
             </form>
 
             <Link to="/novaconta" className="btnNovaConta">
-            Criar conta
+              Criar conta
             </Link>
 
             <Link to="/" className="btnVoltar">

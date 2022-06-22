@@ -10,9 +10,10 @@ export const NovaContainer = styled.div`
 
   .logo {
     margin: 20px;
-    margin-left: 120px;
+    margin-left: 35%;
     width: 30%;
     height: 30%;
+    display: inline-block;
   }
 
   display: flex;
@@ -64,14 +65,13 @@ export const NovaContainer = styled.div`
   }
   section .contetBx .formBx h2 {
     color: #607d8b;
-    font-weight: 600;
-    font-size: 1.3em;
+    font-weight: 500;
+    font-size: 1.4em;  
+    text-align: center;
     text-transform: uppercase;
-    margin-bottom: 20px;
-    margin-left: 110px;
-    border-bottom: 4px solid #ff4584;
-    display: inline-block;
-    letter-spacing: 19x;
+    margin-bottom: 15px;
+    text-decoration: underline 4px solid #ff4584;    
+    letter-spacing: 2px;
   }
   section .contetBx .formBx .inputBx {
     margin-bottom: 20px;

@@ -31,18 +31,18 @@ const NovaConta = () => {
     } catch (error) {
       //setError(error.code);
       if (error.code === "auth/user-not-found") {
-        setError(error.code + " => Usuário não encontrado.");
+        setError("Usuário não encontrado.");
       } else if (error.code === "auth/invalid-email") {
-        setError(error.code + " => E-mail Inválido.");
+        setError("E-mail Inválido.");
       } else if (error.code === "auth/internal-error") {
-        setError(error.code + " => Preencha todos os campos corretamente");
+        setError("Preencha todos os campos corretamente");
       } else if (error.code === "auth/weak-password") {
-        setError(error.code + " => Senha fraca");
+        setError("Senha fraca");
       } else if (error.code === "auth/email-already-in-use") {
-        setError(error.code + " => Esse e-mail já está sendo utilizado.");
+        setError("Esse e-mail já está sendo utilizado.");
       } else if (error.code === "auth/missing-email") {
-        setError(error.code + " => E-mail ausente / Digite um e-mail.");
-      } else setError("Erro no Cadastro: " + error.code);
+        setError("E-mail ausente / Digite um e-mail.");
+      } else setError("Erro no Cadastro!");
     }
   };
 
@@ -59,10 +59,10 @@ const NovaConta = () => {
         </div>
         <div className="contetBx">
           <div className="formBx">
-          <img src={logoB} className="logo" alt="logo" /> 
-          <br/>
+            <img src={logoB} className="logo" alt="logo" />
+            <br />
             <h2> Cadastro </h2>
-            <p></p>    
+            <p></p>
 
             <form onSubmit={handleSubmit}>
               <div className="inputBx">

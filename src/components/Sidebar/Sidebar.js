@@ -159,19 +159,19 @@ const logArray = [
 ];
 const linksArray = [
   {
-    label: "Home",
+    label: "Inicio",
     icon: <AiFillHome />,
     to: "/home",
     notification: 0
   },
   {
-    label: "About",
+    label: "Sobre",
     icon: <FaInfoCircle />,
     to: "/about",
     notification: 0
   },
   {
-    label: "Destinations",
+    label: "Destinos",
     icon: <FaPlaneDeparture />,
     to: "/destinations",
     notification: 0
@@ -183,13 +183,13 @@ const linksArray = [
     notification: 0
   },
   {
-    label: "Services",
+    label: "Serviços",
     icon: <MdMiscellaneousServices />,
     to: "/services",
     notification: 0
   },
   {
-    label: "Contact",
+    label: "Contato",
     icon: <MdContactMail />,
     to: "/contact",
     notification: 0

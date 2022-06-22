@@ -31,20 +31,20 @@ const LoginPage = () => {
     } catch (error) {
       //setError(err.message);
       if (error.code === "auth/user-not-found") {
-        setError(error.code + " => Usuário não encontrado.");
+        setError("Usuário não encontrado.");
       } else if (error.code === "auth/invalid-email") {
-        setError(error.code + " => E-mail Inválido.");
+        setError("E-mail Inválido.");
       } else if (error.code === "auth/internal-error") {
-        setError(error.code + " => Preencha todos os campos corretamente");
+        setError("Preencha todos os campos corretamente");
       } else if (error.code === "auth/weak-password") {
-        setError(error.code + " => Senha fraca");
+        setError("Senha fraca");
       } else if (error.code === "auth/email-already-in-use") {
-        setError(error.code + " => Esse e-mail já está sendo utilizado.");
+        setError("Esse e-mail já está sendo utilizado.");
       } else if (error.code === "auth/wrong-password") {
-        setError(error.code + " => Senha Incorreta.");
+        setError("Senha Incorreta.");
       } else if (error.code === "auth/missing-email") {
-        setError(error.code + " => E-mail ausente / Digite um e-mail.");
-      } else setError("Erro no Cadastro: " + error.code);
+        setError("E-mail ausente / Digite um e-mail.");
+      } else setError("Erro no Cadastro!");
     }
   };
 
@@ -90,12 +90,11 @@ const LoginPage = () => {
         </div>
         <div className="contetBx">
           <div className="formBx">
-            <img src={logoB} className="logo" alt="logo" /> 
-            <br/>
-            <h2> Bem-Vindo! </h2>
-            <p>
-            Cadastre-se ou faça login para acessar a home page.
-            </p>
+            <img src={logoB} className="logo" alt="logo" />
+            <br />
+            <h2>Bem-Vindo!</h2>
+
+            <p>Cadastre-se ou faça login para acessar a home page.</p>
             <form onSubmit={handleSubmit}>
               <div className="inputBx">
                 <span>Nome</span>
@@ -123,7 +122,7 @@ const LoginPage = () => {
                 </div>
               </div>
 
-             {/* 
+              {/* 
              <div className="remember">
                 <label>
                   <input type="checkbox" name="" /> lembrar-me
@@ -138,7 +137,7 @@ const LoginPage = () => {
             </form>
             <div className="inputBx">
               <Link to="/recuperasenha" className="btnSingin">
-              Esqueci minha senha
+                Esqueci minha senha
               </Link>
 
               <Link to="/novaconta" className="btnPassword">

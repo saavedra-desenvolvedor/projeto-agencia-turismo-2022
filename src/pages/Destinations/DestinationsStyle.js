@@ -1,20 +1,12 @@
 import styled from "@emotion/styled";
 
 export const DestinationsContainer = styled.div`
-  .logoDestinations {
-    max-width: 40%;
-    min-width: 40%;
-    /*object-fit: contain; */
-    height: auto;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+  /* titulo */
   h1 {
     font-size: 20px;
     margin: 10px;
     text-align: center;
+    color: red;
   }
   /* Css Card */
   .home {
@@ -122,28 +114,6 @@ export const DestinationsContainer = styled.div`
       width: 65%;
       height: 90%;
       flex-direction: column;
-    }
-
-    .loginTitle {
-      display: none;
-    }
-
-    .center {
-      width: 100%;
-      position: relative;
-    }
-
-    .left {
-      padding: 20px;
-    }
-
-    .right {
-      padding: 20px;
-    }
-
-    .line {
-      height: 0.5px;
-      width: 300px;
     }
   }
 `;

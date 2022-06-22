@@ -32,7 +32,7 @@ color: ${({ theme }) => theme.text};
 text-decoration: none;
 }
 */
-/* CSS CARD */
+/* CSS CARD POST */
 .desc {
 color: ${({ theme }) => theme.text}; 
 }
@@ -87,6 +87,17 @@ cursor: pointer;
 border-radius: 50%;
 background: ${({ theme }) => theme.bgBottonCard};
 } 
-
+@media screen and (max-width: 992px) {
+    .postImg {
+      width: 70%;   
+      height: 20%;
+      margin-left: -48px;
+      
+      
+    }
+    .postTitle {
+      
+    }
+}
 
 `;

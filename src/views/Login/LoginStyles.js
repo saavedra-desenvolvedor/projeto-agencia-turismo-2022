@@ -10,10 +10,13 @@ export const LoginContainer = styled.div`
 
   .logo {
     margin: 20px;
-    margin-left: 120px;
-    width: 30%;
-    height: 30%;
+    margin-left: 35%;
+    width: 28%;
+    height: 28%;
+    display: inline-block;
+
   }
+ 
 
   display: flex;
   position: absolute;
@@ -64,20 +67,20 @@ export const LoginContainer = styled.div`
   }
   section .contetBx .formBx p {
     font-weight: 550;
-    padding: 7px;
-    margin-left: -8px ;
+    padding: 5px;
+    margin-left: -8px;    
   }
   section .contetBx .formBx h2 {
     color: #607d8b;
-    font-weight: 600;
-    font-size: 1.3em;
-    margin-left: 100px;
+    font-weight: 500;
+    font-size: 1.4em;  
+    text-align: center;
     text-transform: uppercase;
-    margin-bottom: 15px;    
-    border-bottom: 4px solid #ff4584;
-    display: inline-block;
-    letter-spacing: 19x;
+    margin-bottom: 3px;
+    text-decoration: underline 4px solid #ff4584;    
+    letter-spacing: 2px;
   }
+ 
   section .contetBx .formBx .inputBx {
     margin-bottom: 18px;
   }
@@ -135,7 +138,7 @@ export const LoginContainer = styled.div`
   section .contetBx .formBx h3 {
     color: #607d8b;
     text-align: center;
-    margin: 35px 0 10px;
+    margin: 20px 0 10px;
     font-size: 1.4em;
     font-weight: 500;
   }

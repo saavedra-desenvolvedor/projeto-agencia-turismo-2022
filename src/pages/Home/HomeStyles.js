@@ -46,8 +46,10 @@ export const HomeContainer = styled.div`
     width: 95%;
 
     cursor: pointer;
-    @media screen and (min-width: 300px) and (max-width: 480px) {
-      width: 30%;
+    @media (max-width: 480px) {
+      width: 100px;
+      height: 100px;
+      display: block;
       right: 40px;
     }
     @media screen and (min-width: 600px) and (orientation: landscape) {

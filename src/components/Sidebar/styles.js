@@ -9,7 +9,7 @@ export const SSidebar = styled.div`
   height: 100vh;
   padding: ${v.lgSpacing};
 
-  position: relative; /* Relative mudado para Absolute  */
+  position: relative;
 
   .menu-bar {
     height: calc(100% - 120px);
@@ -98,6 +98,7 @@ export const SSidebar = styled.div`
   }
 `;
 
+/* Botão abre/fecha Menu */
 export const SSidebarButton = styled.button`
   ${btnReset};
   position: absolute;
@@ -115,6 +116,9 @@ export const SSidebarButton = styled.button`
   cursor: pointer;
 
   transform: ${({ isOpen }) => (!isOpen ? `rotate(180deg)` : `initial`)};
+  @media (max-width: 720px) {
+    display: none;
+  }
 `;
 
 export const SLogo = styled.div`

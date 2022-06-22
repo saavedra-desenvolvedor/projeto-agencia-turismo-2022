@@ -34,6 +34,7 @@ const DestinationsPage = () => {
       <h1>Destinos</h1>
       <div className="home">
         {/*<img src={logoB} alt="imagem Destinations" className="logoDestinations" /> */}
+
         {posts.map((post) => (
           <Card key={post.id} post={post} />
         ))}
